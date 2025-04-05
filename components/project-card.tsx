@@ -29,7 +29,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
       <Card
-        className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 overflow-hidden h-full transition-all duration-300 hover:border-emerald-400/50 hover:shadow-lg hover:shadow-emerald-400/10"
+        className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 overflow-hidden h-full transition-all duration-300 hover:border-emerald-400/50 hover:shadow-lg hover:shadow-emerald-400/10 hover:-translate-y-1"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

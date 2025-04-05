@@ -6,10 +6,11 @@ interface SectionDividerProps {
   className?: string
 }
 
+// Reduce the margin on the section divider
 export default function SectionDivider({ className = "" }: SectionDividerProps) {
   return (
     <motion.div
-      className={`flex items-center mb-10 ${className}`}
+      className={`flex items-center mb-4 ${className}`}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

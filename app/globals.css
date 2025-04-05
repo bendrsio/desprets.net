@@ -58,6 +58,11 @@
   }
 }
 
+/* Add radial gradient utility */
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -77,9 +82,29 @@
   background: #444;
 }
 
+/* Add a smooth scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Remove the link underline animation */
+a {
+  position: relative;
+}
+
+/* Remove these styles that create the underline effect */
+a::after {
+  content: none;
+}
+
+a:hover::after {
+  width: 0;
 }
 
 /* Subtle noise texture for dark mode */
@@ -135,5 +160,16 @@ html {
 }
 
 .animate-blink {
-  animation: blink 1s infinite;
+  animation: blink 0.8s infinite;
 }
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
