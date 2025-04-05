@@ -135,5 +135,5 @@ html {
 }
 
 .animate-blink {
-  animation: blink 0.8s infinite;
+  animation: blink 1s infinite;
 }
