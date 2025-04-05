@@ -2,14 +2,26 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { Github, Mail, Linkedin } from "lucide-react";
-import { motion } from "framer-motion";
+import { Github, Mail, Linkedin, GraduationCap } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import AnimatedText from "@/components/animated-text";
 import SmoothScrollLink from "@/components/smooth-scroll-link";
 import ProjectCard from "@/components/project-card";
 import SectionDivider from "@/components/section-divider";
+import { createLucideIcon } from "lucide-react";
+
+const XIcon = createLucideIcon("X", [
+  [
+    "path",
+    {
+      d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+      stroke: "none",
+      fill: "currentColor",
+    },
+  ],
+]);
 
 // Function to check if element is in viewport
 const useScrollReveal = () => {
@@ -37,6 +49,12 @@ const useScrollReveal = () => {
 
 export default function Home() {
   useScrollReveal();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
@@ -55,6 +73,12 @@ export default function Home() {
               className="hover:text-emerald-400 transition-colors"
             >
               About
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#education"
+              className="hover:text-emerald-400 transition-colors"
+            >
+              Education
             </SmoothScrollLink>
             <SmoothScrollLink
               href="#skills"
@@ -77,28 +101,33 @@ export default function Home() {
             <ThemeToggle />
           </div>
         </nav>
+        {/* Thinner Scroll Progress Bar */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400"
+          style={{ scaleX, transformOrigin: "0%" }}
+        />
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
+        {/* Hero Section - without glow */}
         <motion.section
-          className="py-2 flex flex-col items-center justify-center text-center"
+          className="py-8 flex flex-col items-center justify-center text-center relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-4xl md:text-6xl font-bold mb-4 relative z-10">
             {" "}
             Benjamin Desprets{" "}
           </div>
           <AnimatedText
             text="Full-stack developer"
-            className="text-xl md:text-2xl max-w-2xl mb-8 text-zinc-600 dark:text-gray-400"
+            className="text-xl md:text-2xl max-w-2xl mb-6 text-zinc-600 dark:text-gray-400 relative z-10"
             typingSpeed={50}
             showCursor={true}
           />
           <motion.div
-            className="flex space-x-4"
+            className="flex space-x-4 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.5 }}
@@ -120,10 +149,10 @@ export default function Home() {
         </motion.section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-2 scroll-reveal">
+        <section id="projects" className="py-8 scroll-reveal">
           <AnimatedText
             text="Projects"
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-1"
             typingSpeed={100}
             showCursor={false}
           />
@@ -136,10 +165,10 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-2 scroll-reveal">
+        <section id="about" className="py-8 scroll-reveal">
           <AnimatedText
             text="About Me"
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-1"
             typingSpeed={100}
             showCursor={false}
           />
@@ -150,13 +179,13 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-zinc-600 dark:text-gray-400 mb-4">
+            <p className="text-zinc-600 dark:text-gray-400 mb-3">
               I'm a passionate developer with a focus on creating clean,
               efficient, and user-friendly applications. With expertise in both
               frontend and backend technologies, I enjoy building complete
               solutions that solve real-world problems.
             </p>
-            <p className="text-zinc-600 dark:text-gray-400 mb-4">
+            <p className="text-zinc-600 dark:text-gray-400">
               I'm currently completing my master's degree in computer science at
               Epitech and obtaining a certificate in management at McGill
               University. My academic journey has equipped me with a strong
@@ -166,11 +195,62 @@ export default function Home() {
           </motion.div>
         </section>
 
+        {/* Education Section */}
+        <section id="education" className="py-8 scroll-reveal">
+          <AnimatedText
+            text="Education"
+            className="text-3xl font-bold mb-1"
+            typingSpeed={100}
+            showCursor={false}
+          />
+          <SectionDivider />
+          <div className="space-y-6">
+            {education.map((item, index) => (
+              <motion.div
+                key={index}
+                className="relative pl-8 border-l-2 border-zinc-200 dark:border-zinc-800"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                {/* Dot marker */}
+                <div className="absolute left-[-9px] top-0 h-4 w-4 rounded-full bg-emerald-400"></div>
+
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                  <h3 className="text-lg font-semibold">{item.degree}</h3>
+                  <span className="text-emerald-400 text-sm font-mono">
+                    {item.startYear} - {item.endYear}
+                  </span>
+                </div>
+
+                <div className="flex items-center mb-2">
+                  <GraduationCap className="h-4 w-4 mr-2 text-zinc-500 dark:text-zinc-400" />
+                  <span className="text-zinc-600 dark:text-gray-400">
+                    {item.institution}
+                  </span>
+                  {item.location && (
+                    <span className="text-zinc-500 dark:text-zinc-400 text-sm ml-2">
+                      • {item.location}
+                    </span>
+                  )}
+                </div>
+
+                {item.description && (
+                  <p className="text-zinc-600 dark:text-gray-400 text-sm">
+                    {item.description}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
         {/* Skills Section */}
-        <section id="skills" className="py-2 scroll-reveal">
+        <section id="skills" className="py-8 scroll-reveal">
           <AnimatedText
             text="Skills"
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-1"
             typingSpeed={100}
             showCursor={false}
           />
@@ -180,36 +260,54 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.2, delay: index * 0.05 }}
-              >
-                <div className="h-2 w-2 bg-emerald-400 mr-2"></div>
-                <span>{skill}</span>
-              </motion.div>
-            ))}
+            {Object.entries(skillsByCategory).map(
+              ([category, skills], categoryIndex) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                  className="mb-4"
+                >
+                  <h3 className="text-xl font-semibold mb-2 text-emerald-400">
+                    {category}
+                  </h3>
+                  <div className="grid grid-cols-1 gap-2">
+                    {skills.map((skill, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex items-center"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                      >
+                        <div className="h-2 w-2 bg-emerald-400 mr-2"></div>
+                        <span>{skill}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            )}
           </motion.div>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-2 scroll-reveal">
+        <section id="contact" className="py-8 scroll-reveal">
           <AnimatedText
             text="Contact"
-            className="text-3xl font-bold mb-2"
+            className="text-3xl font-bold mb-1"
             typingSpeed={100}
             showCursor={false}
           />
           <SectionDivider />
           <div className="max-w-md">
             <motion.p
-              className="text-zinc-600 dark:text-gray-400 mb-6"
+              className="text-zinc-600 dark:text-gray-400 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -218,7 +316,7 @@ export default function Home() {
               Interested in working together? Feel free to reach out through any
               of the following channels:
             </motion.p>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <motion.a
                 href="mailto:benjy.desprets@gmail.com"
                 className="flex items-center group"
@@ -250,6 +348,22 @@ export default function Home() {
                 </span>
               </motion.a>
               <motion.a
+                href="https://x.com/bendrsio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center group"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, delay: 0.1 }}
+                whileHover={{ x: 15 }}
+              >
+                <XIcon className="mr-4 text-emerald-400" />
+                <span className="group-hover:text-emerald-400 transition-colors">
+                  x.com/bendrsio
+                </span>
+              </motion.a>
+              <motion.a
                 href="https://www.linkedin.com/in/benjamindesprets"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -268,6 +382,29 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <motion.button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 p-3 rounded-full bg-emerald-400 text-black shadow-lg hover:bg-emerald-500 transition-all duration-300 z-50"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-chevron-up"
+          >
+            <path d="m18 15-6-6-6 6" />
+          </svg>
+        </motion.button>
       </main>
 
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-zinc-600 dark:text-gray-400">
@@ -313,30 +450,53 @@ const projects = [
   },
 ];
 
-const skills = [
-  "C",
-  "C++",
-  "JavaScript",
-  "TypeScript",
-  "Python",
-  "React",
-  "Next.js",
-  "Node.js",
-  "HTML",
-  "CSS",
+// Education data
+const education = [
+  {
+    degree: "Master's in Computer Science",
+    institution: "Epitech",
+    location: "Paris, France",
+    startYear: "2019",
+    endYear: "2024",
+    description:
+      "Specialized in software engineering and full-stack development. Thesis on distributed systems and cloud computing.",
+  },
+  {
+    degree: "Certificate in Management",
+    institution: "McGill University",
+    location: "Montreal, Canada",
+    startYear: "2022",
+    endYear: "2023",
+    description:
+      "Focused on project management, leadership, and business strategy for technology professionals.",
+  },
+  {
+    degree: "Bachelor's in Computer Science",
+    institution: "Epitech",
+    location: "Paris, France",
+    startYear: "2019",
+    endYear: "2022",
+    description:
+      "Foundation in programming fundamentals, algorithms, and software development methodologies.",
+  },
 ];
 
-// const skills = [
-//   "JavaScript/TypeScript",
-//   "React/Next.js",
-//   "Node.js",
-//   "HTML/CSS",
-//   "Tailwind CSS",
-//   "MongoDB",
-//   "PostgreSQL",
-//   "Git/GitHub",
-//   "Docker",
-//   "AWS",
-//   "GraphQL",
-//   "Redux",
-// ];
+const skillsByCategory = {
+  "Programming Languages": ["JavaScript", "TypeScript", "Python", "C", "C++"],
+  "Frontend Development": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS"],
+  "Backend Development": [
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "REST APIs",
+  ],
+  "Tools & Technologies": ["Git", "Docker", "AWS", "CI/CD", "Linux"],
+  "Soft Skills": [
+    "Leadership",
+    "Problem Solving",
+    "Communication",
+    "Team Collaboration",
+    "Project Management",
+  ],
+};
