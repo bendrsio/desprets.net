@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Benjamin Desprets | Developer",
+  title: "Benjamin Desprets | Full-Stack Developer",
   description: "Personal portfolio showcasing projects and skills",
 };
 

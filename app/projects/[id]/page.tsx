@@ -1,55 +1,35 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { ArrowLeft, Github, ExternalLink, Clock } from "lucide-react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { notFound } from "next/navigation"
-import AnimatedText from "@/components/animated-text"
-import MarkdownRenderer from "@/components/markdown-renderer"
+import { useEffect } from "react";
+import Link from "next/link";
+import { ArrowLeft, Github, ExternalLink, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { notFound } from "next/navigation";
+import AnimatedText from "@/components/animated-text";
+import MarkdownRenderer from "@/components/markdown-renderer";
 
 // This would typically come from a database or API
 const projects = [
   {
     id: "1",
     title: "Project One",
-    description: "A full-stack application with authentication and database integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    github: "#",
-    demo: "#",
+    description:
+      "A full-stack application with authentication and database integration.",
+    technologies: ["React", "Tailwind", "Railway", "TypeScript"],
+    github: "https://github.com/bendrsio/emoji-color-picker",
+    demo: "https://emoji.desprets.net/",
     fullDescription: `
-      This project is a comprehensive full-stack application that demonstrates modern web development practices.
-      
-      ## Features
-      
-      - User authentication with JWT
-      - Role-based access control
-      - Real-time data updates
-      - Responsive design for all devices
-      - Comprehensive API with documentation
-      
-      ## Technical Details
-      
-      The frontend is built with React, utilizing hooks and context for state management. The UI is designed with a focus on usability and accessibility, with responsive layouts that work well on devices of all sizes.
-      
-      The backend is powered by Node.js and Express, with MongoDB as the database. The API follows RESTful principles and includes comprehensive documentation.
-      
-      ## Challenges and Solutions
-      
-      One of the main challenges was implementing real-time updates without affecting performance. This was solved by using a combination of WebSockets for real-time communication and strategic data fetching to minimize unnecessary updates.
-      
-      ## Outcome
-      
-      The application has been well-received by users, with positive feedback on its performance and usability. It serves as a solid foundation for future projects and demonstrates my ability to build complete, production-ready applications.
+      A unique take on color pickers, showing the closest emoji.
     `,
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
+    images: ["/Emoji-Color-Picker.png"],
   },
   {
     id: "2",
     title: "Project Two",
-    description: "An e-commerce platform with payment processing and inventory management.",
+    description:
+      "An e-commerce platform with payment processing and inventory management.",
     technologies: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
     github: "#",
     demo: "#",
@@ -81,12 +61,16 @@ const projects = [
       
       The platform has been successfully deployed for multiple clients, with positive feedback on its ease of use and reliability. It demonstrates my ability to build complex, production-ready applications with modern technologies.
     `,
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
+    images: [
+      "/placeholder.svg?height=600&width=800",
+      "/placeholder.svg?height=600&width=800",
+    ],
   },
   {
     id: "3",
     title: "Project Three",
-    description: "A real-time chat application with video calling capabilities.",
+    description:
+      "A real-time chat application with video calling capabilities.",
     technologies: ["React", "Socket.io", "WebRTC", "Firebase"],
     github: "#",
     demo: "#",
@@ -116,48 +100,51 @@ const projects = [
       
       The application has been successfully deployed and is being used by distributed teams for daily communication. It demonstrates my ability to work with real-time technologies and implement complex peer-to-peer systems.
     `,
-    images: ["/placeholder.svg?height=600&width=800", "/placeholder.svg?height=600&width=800"],
+    images: [
+      "/placeholder.svg?height=600&width=800",
+      "/placeholder.svg?height=600&width=800",
+    ],
   },
-]
+];
 
 // Calculate reading time
 const calculateReadingTime = (text: string) => {
-  const wordsPerMinute = 200
-  const wordCount = text.split(/\s+/).length
-  const readingTime = Math.ceil(wordCount / wordsPerMinute)
-  return readingTime
-}
+  const wordsPerMinute = 200;
+  const wordCount = text.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime;
+};
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === params.id)
+  const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
-    notFound()
+    notFound();
   }
 
-  const readingTime = calculateReadingTime(project.fullDescription)
+  const readingTime = calculateReadingTime(project.fullDescription);
 
   // Animate sections on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const reveals = document.querySelectorAll(".scroll-reveal")
+      const reveals = document.querySelectorAll(".scroll-reveal");
 
       for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight
-        const elementTop = reveals[i].getBoundingClientRect().top
-        const elementVisible = 150
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
 
         if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active")
+          reveals[i].classList.add("active");
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Check on initial load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check on initial load
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
@@ -167,19 +154,34 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             Benjamin Desprets
           </Link>
           <div className="space-x-6 flex items-center">
-            <Link href="/#projects" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#projects"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Projects
             </Link>
-            <Link href="/#about" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#about"
+              className="hover:text-emerald-400 transition-colors"
+            >
               About
             </Link>
-            <Link href="/#skills" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#skills"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Skills
             </Link>
-            <Link href="/#contact" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#contact"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Contact
             </Link>
-            <Link href="/blog" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/blog"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Blog
             </Link>
             <ThemeToggle />
@@ -188,8 +190,15 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="/#projects" className="inline-flex items-center text-emerald-400 hover:underline mb-8 group">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link
+            href="/#projects"
+            className="inline-flex items-center text-emerald-400 hover:underline mb-8 group"
+          >
             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             Back to all projects
           </Link>
@@ -200,7 +209,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <AnimatedText text={project.title} className="text-4xl font-bold mb-4" typingSpeed={50} showCursor={false} />
+          <AnimatedText
+            text={project.title}
+            className="text-4xl font-bold mb-4"
+            typingSpeed={50}
+            showCursor={false}
+          />
 
           <div className="flex items-center mb-4 text-zinc-600 dark:text-gray-400 text-sm">
             <Clock className="h-4 w-4 mr-1" />
@@ -228,7 +242,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Link href={project.github}>
-                <Button variant="outline" size="sm" className="flex items-center">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center"
+                >
                   <Github className="mr-2 h-4 w-4" />
                   View Code
                 </Button>
@@ -240,7 +258,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Link href={project.demo}>
-                <Button variant="outline" size="sm" className="flex items-center">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center"
+                >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
                 </Button>
@@ -272,11 +294,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-zinc-600 dark:text-gray-400 mt-20">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} Benjamin Desprets. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Benjamin Desprets. All rights reserved.
+          </p>
           <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

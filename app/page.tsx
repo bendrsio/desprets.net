@@ -423,80 +423,73 @@ export default function Home() {
 const projects = [
   {
     id: "1",
-    title: "Project One",
-    description:
-      "A full-stack application with authentication and database integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    title: "Emoji Picker",
+    description: "A unique take on color pickers, showing the closest emoji",
+    technologies: ["React", "Tailwind", "Railway", "TypeScript"],
     github: "#",
     demo: "#",
   },
-  {
-    id: "2",
-    title: "Project Two",
-    description:
-      "An e-commerce platform with payment processing and inventory management.",
-    technologies: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    id: "3",
-    title: "Project Three",
-    description:
-      "A real-time chat application with video calling capabilities.",
-    technologies: ["React", "Socket.io", "WebRTC", "Firebase"],
-    github: "#",
-    demo: "#",
-  },
+  // {
+  //   id: "2",
+  //   title: "Project Two",
+  //   description:
+  //     "An e-commerce platform with payment processing and inventory management.",
+  //   technologies: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
+  //   github: "#",
+  //   demo: "#",
+  // },
+  // {
+  //   id: "3",
+  //   title: "Project Three",
+  //   description:
+  //     "A real-time chat application with video calling capabilities.",
+  //   technologies: ["React", "Socket.io", "WebRTC", "Firebase"],
+  //   github: "#",
+  //   demo: "#",
+  // },
 ];
 
 // Education data
 const education = [
   {
-    degree: "Master's in Computer Science",
+    degree: "Master's in Computer Science (Expected)",
     institution: "Epitech",
-    location: "Paris, France",
-    startYear: "2019",
-    endYear: "2024",
+    location: "Montreal, Canada | Paris, France",
+    startYear: "2024",
+    endYear: "2026",
     description:
-      "Specialized in software engineering and full-stack development. Thesis on distributed systems and cloud computing.",
+      "Specialized in software engineering, full-stack development, and maintaining production systems.",
   },
   {
-    degree: "Certificate in Management",
+    degree: "Certificate in Management (Expected)",
     institution: "McGill University",
     location: "Montreal, Canada",
-    startYear: "2022",
-    endYear: "2023",
+    startYear: "2024",
+    endYear: "2025",
     description:
-      "Focused on project management, leadership, and business strategy for technology professionals.",
+      "Focused on project management, leadership, finance, and business strategy.",
   },
   {
     degree: "Bachelor's in Computer Science",
     institution: "Epitech",
-    location: "Paris, France",
-    startYear: "2019",
-    endYear: "2022",
+    location: "Paris, France | Berlin, Germany",
+    startYear: "2020",
+    endYear: "2024",
     description:
-      "Foundation in programming fundamentals, algorithms, and software development methodologies.",
+      "Part of the International Track program. Foundation in programming fundamentals, algorithms, and software development methodologies.",
   },
 ];
 
 const skillsByCategory = {
   "Programming Languages": ["JavaScript", "TypeScript", "Python", "C", "C++"],
-  "Frontend Development": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS"],
-  "Backend Development": [
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "PostgreSQL",
-    "REST APIs",
-  ],
-  "Tools & Technologies": ["Git", "Docker", "AWS", "CI/CD", "Linux"],
+  "Frontend Development": ["React", "Next.js", "HTML", "Tailwind"],
+  "Backend Development": ["Node.js", "MongoDB", "PostgreSQL", "REST APIs"],
+  "Tools & Technologies": ["Git", "Docker", "Railway", "CI/CD", "Linux"],
   "Soft Skills": [
     "Leadership",
+    "Project Management",
     "Problem Solving",
     "Communication",
     "Team Collaboration",
-    "Project Management",
   ],
 };
