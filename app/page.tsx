@@ -93,12 +93,12 @@ export default function Home() {
             >
               Contact
             </SmoothScrollLink>
-            <Link
+            {/* <Link
               href="/blog"
               className="hover:text-emerald-400 transition-colors"
             >
               Blog
-            </Link>
+            </Link> */}
             <ThemeToggle />
           </div>
         </nav>
