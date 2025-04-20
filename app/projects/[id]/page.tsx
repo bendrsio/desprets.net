@@ -9,103 +9,8 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { notFound } from "next/navigation";
 import AnimatedText from "@/components/animated-text";
 import MarkdownRenderer from "@/components/markdown-renderer";
-
+import { projects } from "@/app/projects";
 // This would typically come from a database or API
-const projects = [
-  {
-    id: "1",
-    title: "Project One",
-    description:
-      "A full-stack application with authentication and database integration.",
-    technologies: ["React", "Tailwind", "Railway", "TypeScript"],
-    github: "https://github.com/bendrsio/emoji-color-picker",
-    demo: "https://emoji.desprets.net/",
-    fullDescription: `
-      A unique take on color pickers, showing the closest emoji.
-    `,
-    images: ["/Emoji-Color-Picker.png"],
-  },
-  {
-    id: "2",
-    title: "Project Two",
-    description:
-      "An e-commerce platform with payment processing and inventory management.",
-    technologies: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
-    github: "#",
-    demo: "#",
-    fullDescription: `
-      This e-commerce platform provides a complete solution for online stores, with features for both customers and store administrators.
-      
-      ## Features
-      
-      - Product catalog with categories and search
-      - Shopping cart and checkout process
-      - Payment processing with Stripe
-      - Inventory management
-      - Order tracking and history
-      - Admin dashboard for managing products, orders, and customers
-      
-      ## Technical Details
-      
-      The application is built with Next.js, taking advantage of both server-side rendering and static site generation for optimal performance. Tailwind CSS is used for styling, providing a consistent and responsive design.
-      
-      Prisma is used as the ORM, connecting to a PostgreSQL database. This provides type-safe database access and simplifies database migrations.
-      
-      Stripe is integrated for payment processing, with a custom checkout flow that provides a seamless experience for customers.
-      
-      ## Challenges and Solutions
-      
-      Managing inventory across multiple concurrent sessions was a significant challenge. This was addressed by implementing optimistic UI updates combined with server-side validation to prevent overselling.
-      
-      ## Outcome
-      
-      The platform has been successfully deployed for multiple clients, with positive feedback on its ease of use and reliability. It demonstrates my ability to build complex, production-ready applications with modern technologies.
-    `,
-    images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-    ],
-  },
-  {
-    id: "3",
-    title: "Project Three",
-    description:
-      "A real-time chat application with video calling capabilities.",
-    technologies: ["React", "Socket.io", "WebRTC", "Firebase"],
-    github: "#",
-    demo: "#",
-    fullDescription: `
-      This real-time communication platform enables users to chat and make video calls directly in their browser.
-      
-      ## Features
-      
-      - Text chat with message history
-      - One-on-one video calls
-      - Group video conferences
-      - Screen sharing
-      - File sharing
-      - User presence indicators
-      
-      ## Technical Details
-      
-      The frontend is built with React, with custom hooks for managing WebRTC connections and chat state. The UI is designed to be intuitive and responsive, with a focus on providing a seamless communication experience.
-      
-      Socket.io is used for signaling and managing real-time connections, while WebRTC handles the peer-to-peer audio and video streams. Firebase provides authentication and persistent storage for message history.
-      
-      ## Challenges and Solutions
-      
-      Implementing reliable peer-to-peer connections across different network configurations was challenging. This was addressed by implementing TURN server fallback for situations where direct connections aren't possible.
-      
-      ## Outcome
-      
-      The application has been successfully deployed and is being used by distributed teams for daily communication. It demonstrates my ability to work with real-time technologies and implement complex peer-to-peer systems.
-    `,
-    images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-    ],
-  },
-];
 
 // Calculate reading time
 const calculateReadingTime = (text: string) => {
@@ -200,7 +105,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             className="inline-flex items-center text-emerald-400 hover:underline mb-8 group"
           >
             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            Back to all projects
+            Back
           </Link>
         </motion.div>
 

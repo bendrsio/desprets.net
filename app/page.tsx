@@ -11,6 +11,7 @@ import SmoothScrollLink from "@/components/smooth-scroll-link";
 import ProjectCard from "@/components/project-card";
 import SectionDivider from "@/components/section-divider";
 import { createLucideIcon } from "lucide-react";
+import { projects } from "@/app/projects";
 
 const XIcon = createLucideIcon("X", [
   [
@@ -418,36 +419,6 @@ export default function Home() {
     </div>
   );
 }
-
-// Sample data - replace with your own
-const projects = [
-  {
-    id: "1",
-    title: "Emoji Picker",
-    description: "A unique take on color pickers, showing the closest emoji",
-    technologies: ["React", "Tailwind", "Railway", "TypeScript"],
-    github: "#",
-    demo: "#",
-  },
-  // {
-  //   id: "2",
-  //   title: "Project Two",
-  //   description:
-  //     "An e-commerce platform with payment processing and inventory management.",
-  //   technologies: ["Next.js", "Stripe", "Tailwind CSS", "Prisma"],
-  //   github: "#",
-  //   demo: "#",
-  // },
-  // {
-  //   id: "3",
-  //   title: "Project Three",
-  //   description:
-  //     "A real-time chat application with video calling capabilities.",
-  //   technologies: ["React", "Socket.io", "WebRTC", "Firebase"],
-  //   github: "#",
-  //   demo: "#",
-  // },
-];
 
 // Education data
 const education = [
