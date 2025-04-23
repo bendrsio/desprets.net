@@ -349,15 +349,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <MarkdownRenderer content={post.content} />
         </motion.div>
       </main>
-
-      <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-zinc-600 dark:text-gray-400 mt-20">
-        <div className="container mx-auto px-4">
-          <p>
-            © {new Date().getFullYear()} Benjamin Desprets. All rights reserved.
-          </p>
-          <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
-        </div>
-      </footer>
     </div>
   );
 }
