@@ -53,47 +53,6 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
-      <header className="container mx-auto py-6 px-4 sticky top-0 z-50 backdrop-blur-lg bg-white/50 dark:bg-black/50 border-b border-zinc-200 dark:border-zinc-800">
-        <nav className="flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">
-            Benjamin Desprets
-          </Link>
-          <div className="space-x-6 flex items-center">
-            <Link
-              href="/#projects"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/#about"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/#skills"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Skills
-            </Link>
-            <Link
-              href="/#contact"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/blog"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Blog
-            </Link>
-            <ThemeToggle />
-          </div>
-        </nav>
-      </header>
-
       <main className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

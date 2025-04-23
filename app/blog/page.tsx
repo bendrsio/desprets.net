@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { ArrowRight, Calendar, Clock } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
-import AnimatedText from "@/components/animated-text"
-import SectionDivider from "@/components/section-divider"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import AnimatedText from "@/components/animated-text";
+import SectionDivider from "@/components/section-divider";
 
 // Sample blog posts data
 const blogPosts = [
   {
     slug: "getting-started-with-nextjs",
     title: "Getting Started with Next.js",
-    excerpt: "Learn how to build modern web applications with Next.js, React's framework for production.",
+    excerpt:
+      "Learn how to build modern web applications with Next.js, React's framework for production.",
     date: "2023-04-15",
     readingTime: 5,
     categories: ["Web Development", "React", "Next.js"],
@@ -20,7 +21,8 @@ const blogPosts = [
   {
     slug: "understanding-typescript",
     title: "Understanding TypeScript for JavaScript Developers",
-    excerpt: "A comprehensive guide to TypeScript and how it improves your JavaScript development experience.",
+    excerpt:
+      "A comprehensive guide to TypeScript and how it improves your JavaScript development experience.",
     date: "2023-05-22",
     readingTime: 8,
     categories: ["TypeScript", "JavaScript", "Web Development"],
@@ -28,48 +30,34 @@ const blogPosts = [
   {
     slug: "tailwind-css-tips",
     title: "10 Tailwind CSS Tips to Improve Your Workflow",
-    excerpt: "Practical tips and tricks to make the most out of Tailwind CSS in your projects.",
+    excerpt:
+      "Practical tips and tricks to make the most out of Tailwind CSS in your projects.",
     date: "2023-06-10",
     readingTime: 6,
     categories: ["CSS", "Tailwind", "Web Development"],
   },
-]
+];
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
-      <header className="container mx-auto py-6 px-4 sticky top-0 z-50 backdrop-blur-lg bg-white/50 dark:bg-black/50 border-b border-zinc-200 dark:border-zinc-800">
-        <nav className="flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">
-            Benjamin Desprets
-          </Link>
-          <div className="space-x-6 flex items-center">
-            <Link href="/#projects" className="hover:text-emerald-400 transition-colors">
-              Projects
-            </Link>
-            <Link href="/#about" className="hover:text-emerald-400 transition-colors">
-              About
-            </Link>
-            <Link href="/#skills" className="hover:text-emerald-400 transition-colors">
-              Skills
-            </Link>
-            <Link href="/#contact" className="hover:text-emerald-400 transition-colors">
-              Contact
-            </Link>
-            <Link href="/blog" className="text-emerald-400">
-              Blog
-            </Link>
-            <ThemeToggle />
-          </div>
-        </nav>
-      </header>
-
       <main className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="mb-12">
-          <AnimatedText text="Blog" className="text-4xl font-bold mb-2" typingSpeed={50} showCursor={false} />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <AnimatedText
+            text="Blog"
+            className="text-4xl font-bold mb-2"
+            typingSpeed={50}
+            showCursor={false}
+          />
           <SectionDivider />
           <p className="text-zinc-600 dark:text-gray-400 mt-4 max-w-2xl">
-            Thoughts, ideas, and insights about web development, programming, and technology.
+            Thoughts, ideas, and insights about web development, programming,
+            and technology.
           </p>
         </motion.div>
 
@@ -84,7 +72,9 @@ export default function BlogPage() {
             >
               <Link href={`/blog/posts/${post.slug}`} className="block group">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h2 className="text-2xl font-bold group-hover:text-emerald-400 transition-colors">{post.title}</h2>
+                  <h2 className="text-2xl font-bold group-hover:text-emerald-400 transition-colors">
+                    {post.title}
+                  </h2>
                   <div className="flex items-center space-x-4 text-sm text-zinc-600 dark:text-gray-400 mt-2 md:mt-0">
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
@@ -96,10 +86,15 @@ export default function BlogPage() {
                     </div>
                   </div>
                 </div>
-                <p className="text-zinc-600 dark:text-gray-400 mb-4">{post.excerpt}</p>
+                <p className="text-zinc-600 dark:text-gray-400 mb-4">
+                  {post.excerpt}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {post.categories.map((category, catIndex) => (
-                    <span key={catIndex} className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-md">
+                    <span
+                      key={catIndex}
+                      className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-md"
+                    >
                       {category}
                     </span>
                   ))}
@@ -116,11 +111,12 @@ export default function BlogPage() {
 
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-zinc-600 dark:text-gray-400">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} Benjamin Desprets. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Benjamin Desprets. All rights reserved.
+          </p>
           <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
