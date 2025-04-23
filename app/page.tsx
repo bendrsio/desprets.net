@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import { Github, Mail, Linkedin, GraduationCap } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";

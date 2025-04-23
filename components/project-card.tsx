@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <Link href={`/projects/${project.id}`}>
           <div className="h-64 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center relative overflow-hidden cursor-pointer">
             <motion.div
-              animate={{ scale: isHovered ? 1.1 : 1 }}
+              animate={{ scale: isHovered ? 1.2 : 1 }}
               transition={{ duration: 0.4 }}
               className="absolute inset-0 w-full h-full"
             >
@@ -71,7 +71,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                 <Github size={20} />
               </a>
               <a
-                href={project.demo}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-600 dark:text-gray-400 hover:text-zinc-900 dark:hover:text-white transition-colors p-1"

@@ -1,20 +1,21 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import Link from "next/link"
-import { ArrowLeft, Calendar, Clock } from "lucide-react"
-import { motion } from "framer-motion"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { notFound } from "next/navigation"
-import AnimatedText from "@/components/animated-text"
-import MarkdownRenderer from "@/components/markdown-renderer"
+import { useEffect } from "react";
+import Link from "next/link";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { notFound } from "next/navigation";
+import AnimatedText from "@/components/animated-text";
+import MarkdownRenderer from "@/components/markdown-renderer";
 
 // Sample blog posts data
 const blogPosts = [
   {
     slug: "getting-started-with-nextjs",
     title: "Getting Started with Next.js",
-    excerpt: "Learn how to build modern web applications with Next.js, React's framework for production.",
+    excerpt:
+      "Learn how to build modern web applications with Next.js, React's framework for production.",
     date: "2023-04-15",
     readingTime: 5,
     categories: ["Web Development", "React", "Next.js"],
@@ -61,7 +62,8 @@ const blogPosts = [
   {
     slug: "understanding-typescript",
     title: "Understanding TypeScript for JavaScript Developers",
-    excerpt: "A comprehensive guide to TypeScript and how it improves your JavaScript development experience.",
+    excerpt:
+      "A comprehensive guide to TypeScript and how it improves your JavaScript development experience.",
     date: "2023-05-22",
     readingTime: 8,
     categories: ["TypeScript", "JavaScript", "Web Development"],
@@ -123,7 +125,8 @@ const blogPosts = [
   {
     slug: "tailwind-css-tips",
     title: "10 Tailwind CSS Tips to Improve Your Workflow",
-    excerpt: "Practical tips and tricks to make the most out of Tailwind CSS in your projects.",
+    excerpt:
+      "Practical tips and tricks to make the most out of Tailwind CSS in your projects.",
     date: "2023-06-10",
     readingTime: 6,
     categories: ["CSS", "Tailwind", "Web Development"],
@@ -251,44 +254,44 @@ const blogPosts = [
       Tailwind CSS is a powerful framework that can significantly improve your workflow. By following these tips, you can make the most of Tailwind and build beautiful, responsive designs more efficiently.
     `,
   },
-]
+];
 
 // Calculate reading time
 const calculateReadingTime = (text: string) => {
-  const wordsPerMinute = 200
-  const wordCount = text.split(/\s+/).length
-  const readingTime = Math.ceil(wordCount / wordsPerMinute)
-  return readingTime
-}
+  const wordsPerMinute = 200;
+  const wordCount = text.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime;
+};
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug)
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   // Animate sections on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const reveals = document.querySelectorAll(".scroll-reveal")
+      const reveals = document.querySelectorAll(".scroll-reveal");
 
       for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight
-        const elementTop = reveals[i].getBoundingClientRect().top
-        const elementVisible = 150
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
 
         if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active")
+          reveals[i].classList.add("active");
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Check on initial load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check on initial load
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
@@ -298,16 +301,28 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Benjamin Desprets
           </Link>
           <div className="space-x-6 flex items-center">
-            <Link href="/#projects" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#projects"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Projects
             </Link>
-            <Link href="/#about" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#about"
+              className="hover:text-emerald-400 transition-colors"
+            >
               About
             </Link>
-            <Link href="/#skills" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#skills"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Skills
             </Link>
-            <Link href="/#contact" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/#contact"
+              className="hover:text-emerald-400 transition-colors"
+            >
               Contact
             </Link>
             <Link href="/blog" className="text-emerald-400">
@@ -319,8 +334,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="/blog" className="inline-flex items-center text-emerald-400 hover:underline mb-8 group">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-emerald-400 hover:underline mb-8 group"
+          >
             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             Back to all posts
           </Link>
@@ -331,7 +353,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <AnimatedText text={post.title} className="text-4xl font-bold mb-4" typingSpeed={50} showCursor={false} />
+          <AnimatedText
+            text={post.title}
+            className="text-4xl font-bold mb-4"
+            typingSpeed={50}
+            showCursor={false}
+          />
 
           <div className="flex items-center space-x-4 text-zinc-600 dark:text-gray-400 text-sm mb-6">
             <div className="flex items-center">
@@ -364,11 +391,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-zinc-600 dark:text-gray-400 mt-20">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} Benjamin Desprets. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Benjamin Desprets. All rights reserved.
+          </p>
           <p className="mt-2 text-sm">Built with Next.js and Tailwind CSS</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

@@ -5,20 +5,32 @@ export interface Project {
   description: string;
   screenshot?: string;
   technologies: string[];
-  github: string;
-  demo: string;
-  fullDescription: string;
+  github?: string;
+  link?: string;
+  fullDescription?: string;
   images: string[];
 }
 
 export const projects = [
   {
     id: "1",
+    title: "Fundamental (Ongoing)",
+    description: "The easiest wallet in the world!",
+    technologies: ["React-Native", "Tailwind", "TypeScript", "Crypto"],
+    github: "https://github.com/bendrsio/emoji-color-picker",
+    link: "https://www.fundamentalwallet.com/",
+    fullDescription: `
+      I founded Fundamental with 5 classmates in 2024 with the goal of creating the easiest crypto wallet in the world.
+    `,
+    images: ["/Fundamental.jpeg"],
+  },
+  {
+    id: "2",
     title: "Emoji-Picker",
     description: "A unique take on the classic color picker",
     technologies: ["React", "Tailwind", "Railway", "TypeScript"],
     github: "https://github.com/bendrsio/emoji-color-picker",
-    demo: "https://emoji.desprets.net/",
+    link: "https://emoji.desprets.net/",
     fullDescription: `
       A unique take on color pickers, showing the emoji with the closest average RGB value.
     `,
