@@ -62,43 +62,45 @@ export default function Home() {
       <header className="container mx-auto py-6 px-4 sticky top-0 z-50 backdrop-blur-lg bg-white/50 dark:bg-black/50 border-b border-zinc-200 dark:border-zinc-800">
         <nav className="flex justify-between items-center">
           <div className="text-xl font-bold">Benjamin Desprets</div>
-          <div className="space-x-6 flex items-center">
-            <SmoothScrollLink
-              href="#projects"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Projects
-            </SmoothScrollLink>
-            <SmoothScrollLink
-              href="#about"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              About
-            </SmoothScrollLink>
-            <SmoothScrollLink
-              href="#education"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Education
-            </SmoothScrollLink>
-            <SmoothScrollLink
-              href="#skills"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Skills
-            </SmoothScrollLink>
-            <SmoothScrollLink
-              href="#contact"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Contact
-            </SmoothScrollLink>
-            {/* <Link
-              href="/blog"
-              className="hover:text-emerald-400 transition-colors"
-            >
-              Blog
-            </Link> */}
+          <div className="ml-auto flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
+              <SmoothScrollLink
+                href="#projects"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                Projects
+              </SmoothScrollLink>
+              <SmoothScrollLink
+                href="#about"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                About
+              </SmoothScrollLink>
+              <SmoothScrollLink
+                href="#education"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                Education
+              </SmoothScrollLink>
+              <SmoothScrollLink
+                href="#skills"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                Skills
+              </SmoothScrollLink>
+              <SmoothScrollLink
+                href="#contact"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                Contact
+              </SmoothScrollLink>
+              {/* <Link
+                href="/blog"
+                className="hover:text-emerald-400 transition-colors"
+              >
+                Blog
+              </Link> */}
+            </div>
             <ThemeToggle />
           </div>
         </nav>
@@ -175,24 +177,34 @@ export default function Home() {
           />
           <SectionDivider />
           <motion.div
+            className="flex flex-col md:flex-row items-start md:items-center md:space-x-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-zinc-600 dark:text-gray-400 mb-3">
-              I'm a passionate developer with a focus on creating clean,
-              efficient, and user-friendly applications. With expertise in both
-              frontend and backend technologies, I enjoy building complete
-              solutions that solve real-world problems.
-            </p>
-            <p className="text-zinc-600 dark:text-gray-400">
-              I'm currently completing my master's degree in computer science at
-              Epitech and obtaining a certificate in management at McGill
-              University. My academic journey has equipped me with a strong
-              foundation in software development, problem-solving, and
-              leadership skills.
-            </p>
+            <div className="w-full md:w-2/5 flex justify-center md:justify-start md:pl-4">
+              <img
+                src="/headshot.jpg"
+                alt="A headshot of me"
+                className="rounded-lg object-cover w-64 h-64 md:w-256 md:h-256"
+              />
+            </div>
+            <div className="w-full mt-4 md:mt-0 md:pl-4">
+              <p className="text-zinc-600 dark:text-gray-400 mb-3 mx-4 text-justify md:mx-0 md:mr-10">
+                I'm a passionate developer with a focus on creating clean,
+                efficient, and user-friendly applications. With expertise in
+                both frontend and backend technologies, I enjoy building
+                complete solutions that solve real-world problems.
+              </p>
+              <p className="text-zinc-600 dark:text-gray-400 mb-3 mx-4 text-justify md:mx-0 md:mr-10">
+                I'm currently completing my master's degree in computer science
+                at Epitech and obtaining a certificate in management at McGill
+                University. My academic journey has equipped me with a strong
+                foundation in software development, problem-solving, and
+                leadership skills.
+              </p>
+            </div>
           </motion.div>
         </section>
 
