@@ -5,12 +5,10 @@ import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { notFound } from "next/navigation";
 import AnimatedText from "@/components/animated-text";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import { projects } from "@/app/projects";
-// This would typically come from a database or API
 
 // Calculate reading time
 const calculateReadingTime = (text: string) => {
@@ -46,7 +44,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on initial load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -155,7 +153,6 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               </motion.div>
             ))}
           </div>
-
           <MarkdownRenderer content={project.fullDescription} />
         </motion.div>
       </main>

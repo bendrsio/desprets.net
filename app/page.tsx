@@ -2,9 +2,8 @@
 
 import { useEffect } from "react";
 import { Github, Mail, Linkedin, GraduationCap } from "lucide-react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import AnimatedText from "@/components/animated-text";
 import SmoothScrollLink from "@/components/smooth-scroll-link";
 import ProjectCard from "@/components/project-card";
@@ -23,7 +22,7 @@ const XIcon = createLucideIcon("X", [
   ],
 ]);
 
-// Function to check if element is in viewport
+// Check if element is in viewport
 const useScrollReveal = () => {
   useEffect(() => {
     const handleScroll = () => {
@@ -49,17 +48,10 @@ const useScrollReveal = () => {
 
 export default function Home() {
   useScrollReveal();
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-white font-mono">
       <main className="container mx-auto px-4 py-12">
-        {/* Hero Section - without glow */}
+        {/* Hero Section */}
         <motion.section
           className="py-8 flex flex-col items-center justify-center text-center relative"
           initial={{ opacity: 0 }}
@@ -67,8 +59,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-4xl md:text-6xl font-bold mb-4 relative z-10">
-            {" "}
-            Benjamin Desprets{" "}
+            Benjamin Desprets
           </div>
           <AnimatedText
             text="Full-stack developer"
@@ -375,7 +366,7 @@ const education = [
   {
     degree: "Master's in Computer Science (Expected)",
     institution: "Epitech",
-    location: "Montreal, Canada | Paris, France",
+    location: "Montreal, Canada && Paris, France",
     startYear: "2024",
     endYear: "2026",
     description:
@@ -393,7 +384,7 @@ const education = [
   {
     degree: "Bachelor's in Computer Science",
     institution: "Epitech",
-    location: "Paris, France | Berlin, Germany",
+    location: "Paris, France && Berlin, Germany",
     startYear: "2020",
     endYear: "2024",
     description:
@@ -402,8 +393,14 @@ const education = [
 ];
 
 const skillsByCategory = {
-  "Programming Languages": ["JavaScript", "TypeScript", "Python", "C", "C++"],
-  "Frontend Development": ["React", "Next.js", "HTML", "Tailwind"],
+  "Programming Languages": ["C", "C++", "JavaScript", "TypeScript", "Python"],
+  "Frontend Development": [
+    "React",
+    "React Native",
+    "Next.js",
+    "HTML",
+    "Tailwind",
+  ],
   "Backend Development": ["Node.js", "MongoDB", "PostgreSQL", "REST APIs"],
   "Tools & Technologies": ["Git", "Docker", "Railway", "CI/CD", "Linux"],
   "Soft Skills": [
