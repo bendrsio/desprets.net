@@ -366,7 +366,7 @@ const education = [
   {
     degree: "Master's in Computer Science (Expected)",
     institution: "Epitech",
-    location: "Montreal, Canada && Paris, France",
+    location: "Montreal, Canada / Paris, France",
     startYear: "2024",
     endYear: "2026",
     description:
@@ -384,7 +384,7 @@ const education = [
   {
     degree: "Bachelor's in Computer Science",
     institution: "Epitech",
-    location: "Paris, France && Berlin, Germany",
+    location: "Paris, France / Berlin, Germany",
     startYear: "2020",
     endYear: "2024",
     description:
