@@ -73,7 +73,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.5 }}
           >
-            <SmoothScrollLink href="#projects" className="inline-block">
+            <SmoothScrollLink
+              href="#projects"
+              className="inline-block"
+              title="View Projects section"
+            >
               <Button
                 variant="outline"
                 className="border-emerald-400 text-emerald-400 hover:bg-emerald-400/10"
@@ -81,7 +85,11 @@ export default function Home() {
                 View Projects
               </Button>
             </SmoothScrollLink>
-            <SmoothScrollLink href="#contact" className="inline-block">
+            <SmoothScrollLink
+              href="#contact"
+              className="inline-block"
+              title="Jump to Contact section"
+            >
               <Button className="bg-emerald-400 text-black hover:bg-emerald-500">
                 Contact Me
               </Button>
@@ -124,6 +132,9 @@ export default function Home() {
             <div className="w-full md:w-2/5 flex justify-center md:justify-start md:pl-4">
               <img
                 src="/headshot.jpg"
+                loading="lazy"
+                width="256"
+                height="256"
                 alt="A headshot of me"
                 className="rounded-lg object-cover w-64 h-64 md:w-256 md:h-256"
               />
@@ -270,6 +281,7 @@ export default function Home() {
             <div className="space-y-3">
               <motion.a
                 href="mailto:benjamin@desprets.net"
+                title="Send email to benjamin@desprets.net"
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -283,7 +295,25 @@ export default function Home() {
                 </span>
               </motion.a>
               <motion.a
+                href="https://www.linkedin.com/in/benjamindesprets"
+                title="Visit LinkedIn profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center group"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, delay: 0.1 }}
+                whileHover={{ x: 15 }}
+              >
+                <Linkedin className="mr-4 text-emerald-400" />
+                <span className="group-hover:text-emerald-400 transition-colors">
+                  linkedin.com/in/benjamindesprets
+                </span>
+              </motion.a>
+              <motion.a
                 href="https://github.com/bendrsio"
+                title="Visit GitHub profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center group"
@@ -300,6 +330,7 @@ export default function Home() {
               </motion.a>
               <motion.a
                 href="https://x.com/bendrsio"
+                title="Visit Twitter (X) profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center group"
@@ -312,22 +343,6 @@ export default function Home() {
                 <XIcon className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
                   x.com/bendrsio
-                </span>
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/benjamindesprets"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center group"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.1 }}
-                whileHover={{ x: 15 }}
-              >
-                <Linkedin className="mr-4 text-emerald-400" />
-                <span className="group-hover:text-emerald-400 transition-colors">
-                  linkedin.com/in/benjamindesprets
                 </span>
               </motion.a>
             </div>
