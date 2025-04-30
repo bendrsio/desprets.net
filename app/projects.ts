@@ -17,7 +17,7 @@ export const projects = [
     title: "Fundamental (Ongoing)",
     description: "The easiest wallet in the world!",
     technologies: ["React-Native", "Tailwind", "TypeScript", "Crypto"],
-    github: "https://github.com/bendrsio/emoji-color-picker",
+    github: "https://github.com/fdmntl/fundamental-app",
     link: "https://www.fundamentalwallet.com/",
     fullDescription: `
       I founded Fundamental with 5 classmates in 2024 with the goal of creating the easiest crypto wallet in the world.
