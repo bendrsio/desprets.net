@@ -21,11 +21,10 @@ export const projects = [
     link: "https://www.fundamentalwallet.com/",
     fullDescription: `
     # Origin
-    I founded Fundamental with 5 classmates in 2024 as part of Epitech's [EIP Program](https://experience.epitech.eu/).
-    We recognized DeFi's immense potential and value to the world, but realized existing apps were either far too complex to become mainstream or comprimzed on the core principle of decentralization.
+    I founded Fundamental with 5 classmates in 2024 as part of Epitech's [EIP Program](https://experience.epitech.eu/).  
+    We recognized DeFi's immense potential and value to the world, but realized existing apps were either far too complex to become mainstream or compromised on the core principle of decentralization.  
     # Mission
-    That's why our mission at fundamental is to make the easuest wallet in the world, while never comprimzing on our values of decentralization and security.
-`,
+    That's why our mission at Fundamental is to make the easiest wallet in the world, without ever compromising on our values of decentralization and security.`,
     images: ["/Fundamental.jpeg"],
   },
   {
