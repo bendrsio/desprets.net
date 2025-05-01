@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { notFound } from "next/navigation";
 import AnimatedText from "@/components/animated-text";
-import MarkdownRenderer from "@/components/markdown-renderer";
 import { projects } from "@/app/projects";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 // Calculate reading time
 const calculateReadingTime = (text: string) => {
@@ -153,7 +154,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
               </motion.div>
             ))}
           </div>
-          <MarkdownRenderer content={project.fullDescription} />
+          <div className="prose dark:prose-invert max-w-none mb-12">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {(project.fullDescription || "").replace(/^\s+/gm, "").trim()}
+            </ReactMarkdown>
+          </div>
         </motion.div>
       </main>
     </div>
