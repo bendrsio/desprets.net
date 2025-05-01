@@ -22,17 +22,8 @@ export const projects = [
     fullDescription: `
     # Fundamental
     ## Origin
-    I founded Fundamental with 5 classmates in 2024 with the goal of creating the easiest crypto wallet in the world.
-    ## Mission
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    ## Vision
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    ## Values
-    - **Simplicity**: We believe that simplicity is the key to user experience. Our wallet is designed to be intuitive and easy to use, even for those who are new to crypto.
-    - **Security**: We take security seriously. Our wallet uses the latest encryption technology to keep your assets safe.
-    - **Transparency**: We believe in transparency and honesty. We are committed to providing our users with clear and accurate information about our wallet and its features.
-    - **Community**: We believe in the power of community. We are building a community of users who can share their experiences and help each other navigate the world of crypto.
-    `,
+    I founded Fundamental with 5 classmates in 2024 as part of Epitech's [EIP Program](https://experience.epitech.eu/).
+`,
     images: ["/Fundamental.jpeg"],
   },
   {
