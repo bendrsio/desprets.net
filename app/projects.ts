@@ -20,11 +20,11 @@ export const projects = [
     github: "https://github.com/fdmntl/fundamental-app",
     link: "https://www.fundamentalwallet.com/",
     fullDescription: `
-    # Fundamental
-    ## Origin
+    # Origin
     I founded Fundamental with 5 classmates in 2024 as part of Epitech's [EIP Program](https://experience.epitech.eu/).
-    ## Mission
-    Our mission is to make crypto accessible to everyone, regardless of their technical background. We believe that crypto has the potential to revolutionize the way we think about money and finance, and we want to be at the forefront of that revolution.
+    We recognized DeFi's immense potential and value to the world, but realized existing apps were either far too complex to become mainstream or comprimzed on the core principle of decentralization.
+    # Mission
+    That's why our mission at fundamental is to make the easuest wallet in the world, while never comprimzing on our values of decentralization and security.
 `,
     images: ["/Fundamental.jpeg"],
   },
