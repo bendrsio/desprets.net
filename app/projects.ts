@@ -48,7 +48,8 @@ export const projects = [
     github: "https://github.com/bendrsio/emoji-color-picker",
     link: "https://emoji.desprets.net/",
     fullDescription: `
-      A unique take on color pickers, showing the emoji with the closest average RGB value.
+      A unique take on color pickers, showing the emoji with the closest average RGB value.  
+      Build with Apple's emoji set in mind. I may add support for other emoji sets in the future.
     `,
     images: ["/Emoji-Color-Picker.png"],
   },
