@@ -379,7 +379,7 @@ export default function Home() {
 // Education data
 const education = [
   {
-    degree: "Master's in Computer Science (Expected)",
+    degree: "Master's in Software Engineering (Expected)",
     institution: "Epitech",
     location: "Montreal, Canada / Paris, France",
     startYear: "2024",
@@ -397,7 +397,7 @@ const education = [
       "Focused on project management, leadership, finance, and business strategy.",
   },
   {
-    degree: "Bachelor's in Computer Science",
+    degree: "Bachelor's in Software Engineering",
     institution: "Epitech",
     location: "Paris, France / Berlin, Germany",
     startYear: "2020",
