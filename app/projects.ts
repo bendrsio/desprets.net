@@ -14,7 +14,7 @@ export interface Project {
 export const projects = [
   {
     id: "1",
-    title: "Fundamental (Ongoing)",
+    title: "Fundamental",
     description: "The easiest wallet in the world!",
     technologies: ["React-Native", "Tailwind", "TypeScript", "Crypto"],
     github: "https://github.com/fdmntl/fundamental-app",
@@ -29,9 +29,22 @@ export const projects = [
   },
   {
     id: "2",
+    title: "Imagen AI (In Progress)",
+    description: "An AI powered image editor and generator - Powered by Gemini",
+    technologies: ["Gemini API", "React", "Tailwind", "TypeScript"],
+    link: "https://imagen.desprets.net/",
+    fullDescription: `
+      An AI powered image editor and generator, powered by Gemini-2.0-Flash.  
+      The app is currently in development and some features are not yet functional.
+      I plan to add more models and features in the future.
+    `,
+    images: ["/Imagen.png"],
+  },
+  {
+    id: "3",
     title: "Emoji-Picker",
     description: "A unique take on the classic color picker",
-    technologies: ["React", "Tailwind", "Railway", "TypeScript"],
+    technologies: ["React", "Tailwind", "TypeScript"],
     github: "https://github.com/bendrsio/emoji-color-picker",
     link: "https://emoji.desprets.net/",
     fullDescription: `
