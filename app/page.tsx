@@ -408,7 +408,14 @@ const education = [
 ];
 
 const skillsByCategory = {
-  "Programming Languages": ["C", "C++", "JavaScript", "TypeScript", "Python"],
+  "Programming Languages": [
+    "C",
+    "C++",
+    "JavaScript",
+    "TypeScript",
+    "Lua",
+    "Python",
+  ],
   "Frontend Development": [
     "React",
     "React Native",
@@ -416,7 +423,7 @@ const skillsByCategory = {
     "HTML",
     "Tailwind",
   ],
-  "Backend Development": ["Node.js", "MongoDB", "PostgreSQL", "REST APIs"],
+  "Backend Development": ["Node.js", "SQL", "REST APIs"],
   "Tools & Technologies": ["Git", "Docker", "Railway", "CI/CD", "Linux"],
   "Soft Skills": [
     "Leadership",

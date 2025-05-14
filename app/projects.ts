@@ -29,10 +29,17 @@ export const projects = [
   },
   {
     id: "2",
-    title: "Imagen AI (In Progress)",
-    description: "An AI powered image editor and generator - Powered by Gemini",
-    technologies: ["Gemini API", "React", "Tailwind", "TypeScript"],
-    link: "https://imagen.desprets.net/",
+    title: "Imagn AI",
+    description: "An AI-powered image editor and generator",
+    technologies: [
+      "Next.js",
+      "Tailwind",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Clerk",
+      "Stripe",
+    ],
+    link: "https://imagn.xyz/",
     fullDescription: `
       An AI powered image editor and generator, powered by Gemini-2.0-Flash.  
       The app is currently in development and some features are not yet functional.
