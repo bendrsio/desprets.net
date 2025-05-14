@@ -41,7 +41,7 @@ export const projects = [
     ],
     link: "https://imagn.xyz/",
     fullDescription: `
-      An AI powered image editor and generator, powered by Gemini-2.0-Flash.  
+      An AI powered image editor and generator, powered by Gemini-2.0 and GPT-image-1 (coming soon).  
       The app is currently in development and some features are not yet functional.
       I plan to add more models and features in the future.
     `,
