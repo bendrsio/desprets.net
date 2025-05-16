@@ -60,4 +60,18 @@ export const projects = [
     `,
     images: ["/Emoji-Color-Picker.png"],
   },
+  {
+    id: "4",
+    title: "desprets.net",
+    description: "You are here!",
+    technologies: ["React", "Tailwind", "TypeScript"],
+    github: "https://github.com/bendrsio/desprets.net",
+    link: "https://desprets.net/",
+    fullDescription: `
+      The website you are on right now!   
+      I built this because I wanted somewhere to show off my projects, my skills and who I am.  
+      You can see the source code and learn how I built it [on GitHub](https://github.com/bendrsio/desprets.net).
+    `,
+    images: ["/Desprets.png"],
+  },
 ];
