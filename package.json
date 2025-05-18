@@ -13,6 +13,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.0.2",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.268.0",
     "next": "^14.0.0",

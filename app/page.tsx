@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { createLucideIcon } from "lucide-react";
 import { projects } from "@/app/projects";
 
@@ -120,6 +121,7 @@ export default function Home() {
                 loop: true,
                 dragFree: true,
               }}
+              plugins={[WheelGesturesPlugin({ forceWheelAxis: "x" })]}
               className="w-full"
             >
               <CarouselContent className="-ml-4">
