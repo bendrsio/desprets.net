@@ -8,6 +8,13 @@ import AnimatedText from "@/components/animated-text";
 import SmoothScrollLink from "@/components/smooth-scroll-link";
 import ProjectCard from "@/components/project-card";
 import SectionDivider from "@/components/section-divider";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { createLucideIcon } from "lucide-react";
 import { projects } from "@/app/projects";
 
@@ -106,10 +113,28 @@ export default function Home() {
             showCursor={false}
           />
           <SectionDivider />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} index={index} />
-            ))}
+          <div className="mx-auto relative px-2 md:px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                dragFree: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {projects.map((project, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                  >
+                    <ProjectCard project={project} index={index} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="max-md:left-2 bg-emerald-400 dark:bg-emerald-400 text-black dark:text-black hover:bg-emerald-600 dark:hover:bg-emerald-600" />
+              <CarouselNext className="max-md:right-2 bg-emerald-400 dark:bg-emerald-400 text-black dark:text-black hover:bg-emerald-600 dark:hover:bg-emerald-600" />
+            </Carousel>
           </div>
         </section>
 
