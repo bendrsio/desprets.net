@@ -81,15 +81,15 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 1.5 }}
           >
             <SmoothScrollLink
-              href="#projects"
+              href="#about"
               className="inline-block"
-              title="View Projects section"
+              title="Jump to About Me section"
             >
               <Button
                 variant="outline"
                 className="border-emerald-400 text-emerald-400 hover:bg-emerald-400/10"
               >
-                View Projects
+                About Me
               </Button>
             </SmoothScrollLink>
             <SmoothScrollLink
