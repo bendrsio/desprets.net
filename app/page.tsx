@@ -105,7 +105,7 @@ export default function Home() {
         </motion.section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-8 scroll-reveal">
+        <section id="projects" className="py-8 scroll-reveal scroll-mt-20">
           <AnimatedText
             text="Projects"
             className="text-3xl font-bold mb-1"
@@ -139,7 +139,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-8 scroll-reveal">
+        <section id="about" className="py-8 scroll-reveal scroll-mt-20">
           <AnimatedText
             text="About Me"
             className="text-3xl font-bold mb-1"
@@ -183,7 +183,7 @@ export default function Home() {
         </section>
 
         {/* Education Section */}
-        <section id="education" className="py-8 scroll-reveal">
+        <section id="education" className="py-8 scroll-reveal scroll-mt-20">
           <AnimatedText
             text="Education"
             className="text-3xl font-bold mb-1"
@@ -234,7 +234,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-8 scroll-reveal">
+        <section id="skills" className="py-8 scroll-reveal scroll-mt-20">
           <AnimatedText
             text="Skills"
             className="text-3xl font-bold mb-1"
@@ -284,7 +284,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-8 scroll-reveal">
+        <section id="contact" className="py-8 scroll-reveal scroll-mt-20">
           <AnimatedText
             text="Contact"
             className="text-3xl font-bold mb-1"
