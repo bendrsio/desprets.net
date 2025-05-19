@@ -320,8 +320,14 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.25, delay: 0.1 }}
-                whileHover={{ x: 15 }}
+                transition={{
+                  opacity: { duration: 0.25, delay: 0 },
+                  x: { duration: 0.25, delay: 0 },
+                }}
+                whileHover={{
+                  x: 50,
+                  transition: { duration: 0.2, delay: 0 },
+                }}
               >
                 <Mail className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
@@ -337,8 +343,14 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.25, delay: 0.3 }}
-                whileHover={{ x: 15 }}
+                transition={{
+                  opacity: { duration: 0.25, delay: 0 },
+                  x: { duration: 0.25, delay: 0 },
+                }}
+                whileHover={{
+                  x: 50,
+                  transition: { duration: 0.2, delay: 0 },
+                }}
               >
                 <Linkedin className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
@@ -354,8 +366,14 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.25, delay: 0.5 }}
-                whileHover={{ x: 15 }}
+                transition={{
+                  opacity: { duration: 0.25, delay: 0 },
+                  x: { duration: 0.25, delay: 0 },
+                }}
+                whileHover={{
+                  x: 50,
+                  transition: { duration: 0.2, delay: 0 },
+                }}
               >
                 <Github className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
@@ -371,8 +389,14 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.25, delay: 0.7 }}
-                whileHover={{ x: 15 }}
+                transition={{
+                  opacity: { duration: 0.25, delay: 0 },
+                  x: { duration: 0.25, delay: 0 },
+                }}
+                whileHover={{
+                  x: 50,
+                  transition: { duration: 0.2, delay: 0 },
+                }}
               >
                 <XIcon className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
