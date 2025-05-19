@@ -35,14 +35,21 @@ const useScrollReveal = () => {
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll(".scroll-reveal");
+      const windowHeight = window.innerHeight;
+      const visibilityThreshold = 150;
 
       for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
+        const el = reveals[i];
+        const rect = el.getBoundingClientRect();
 
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
+        const isInView =
+          rect.top < windowHeight - visibilityThreshold &&
+          rect.bottom > visibilityThreshold;
+
+        if (isInView) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
         }
       }
     };
@@ -153,7 +160,7 @@ export default function Home() {
             className="flex flex-col md:flex-row items-start md:items-center md:space-x-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5 }}
           >
             <div className="w-full md:w-2/5 flex justify-center md:justify-start md:pl-4">
@@ -200,8 +207,8 @@ export default function Home() {
                 className="relative pl-8 border-l-2 border-zinc-200 dark:border-zinc-800"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 {/* Dot marker */}
                 <div className="absolute left-[-9px] top-0 h-4 w-4 rounded-full bg-emerald-400"></div>
@@ -247,7 +254,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
@@ -257,8 +264,8 @@ export default function Home() {
                   key={category}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5 }}
                   className="mb-4"
                 >
                   <h3 className="text-xl font-semibold mb-2 text-emerald-400">
@@ -271,8 +278,8 @@ export default function Home() {
                         className="flex items-center"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.2, delay: index * 0.05 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.3, delay: index * 0.2 }}
                       >
                         <div className="h-2 w-2 bg-emerald-400 mr-2"></div>
                         <span>{skill}</span>
@@ -299,7 +306,7 @@ export default function Home() {
               className="text-zinc-600 dark:text-gray-400 mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5 }}
             >
               Interested in working together? Feel free to reach out through any
@@ -312,7 +319,7 @@ export default function Home() {
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.25, delay: 0.1 }}
                 whileHover={{ x: 15 }}
               >
@@ -329,8 +336,8 @@ export default function Home() {
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.25, delay: 0.3 }}
                 whileHover={{ x: 15 }}
               >
                 <Linkedin className="mr-4 text-emerald-400" />
@@ -346,8 +353,8 @@ export default function Home() {
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.25, delay: 0.5 }}
                 whileHover={{ x: 15 }}
               >
                 <Github className="mr-4 text-emerald-400" />
@@ -363,8 +370,8 @@ export default function Home() {
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: 0.1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.25, delay: 0.7 }}
                 whileHover={{ x: 15 }}
               >
                 <XIcon className="mr-4 text-emerald-400" />
