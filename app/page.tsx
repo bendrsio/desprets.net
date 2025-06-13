@@ -466,28 +466,42 @@ const education = [
 ];
 
 const skillsByCategory = {
-  "Programming Languages": [
+  Languages: [
     "C",
     "C++",
-    "JavaScript",
     "TypeScript",
-    "Lua",
+    "JavaScript",
+    "Solidity",
     "Python",
+    "Lua",
   ],
-  "Frontend Development": [
+  Technologies: [
     "React",
     "React Native",
     "Next.js",
-    "HTML",
     "Tailwind",
+    "Three.js",
+    "Node.js",
+    "UIPath",
+    "Power Automate",
   ],
-  "Backend Development": ["Node.js", "SQL", "REST APIs"],
-  "Tools & Technologies": ["Git", "Docker", "Railway", "CI/CD", "Linux"],
+  "Data & AI": ["SQL", "Pandas", "NumPy", "Ollama", "OpenAI API", "Gemini API"],
+  "Cloud & DevOps": [
+    "Azure",
+    "AWS",
+    "Railway",
+    "Git",
+    "GitHub Actions",
+    "Jenkins",
+    "CI/CD",
+    "Docker",
+  ],
+  Blockchain: ["Foundry", "Hardhat", "Viem", "Ethers.js", "OpenZeppelin"],
   "Soft Skills": [
-    "Leadership",
     "Project Management",
-    "Problem Solving",
-    "Communication",
-    "Team Collaboration",
+    "Teamwork",
+    "Leadership",
+    "Adaptability",
+    "Client Relations",
   ],
 };
