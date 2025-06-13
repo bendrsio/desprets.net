@@ -314,8 +314,8 @@ export default function Home() {
             </motion.p>
             <div className="space-y-3">
               <motion.a
-                href="mailto:benjamin@desprets.net"
-                title="Send email to benjamin@desprets.net"
+                href="mailto:benjamin.desprets@epitech.eu"
+                title="Send email to benjamin.desprets@epitech.eu"
                 className="flex items-center group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -331,7 +331,7 @@ export default function Home() {
               >
                 <Mail className="mr-4 text-emerald-400" />
                 <span className="group-hover:text-emerald-400 transition-colors">
-                  benjamin@desprets.net
+                  benjamin.desprets@epitech.eu
                 </span>
               </motion.a>
               <motion.a
